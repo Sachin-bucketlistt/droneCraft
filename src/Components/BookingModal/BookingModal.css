@@ -1,0 +1,448 @@
+/* ═══════════════════════════════════════
+   GLOBAL BOOKING MODAL — primary theme
+═══════════════════════════════════════ */
+
+.GlobalBookingModal .ant-modal-content {
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 0 !important;
+    border: 1px solid rgba(1, 26, 50, 0.12);
+    box-shadow:
+        0 2px 0 rgba(1, 26, 50, 0.06),
+        0 20px 50px rgba(12, 45, 74, 0.22),
+        0 4px 16px rgba(12, 45, 74, 0.1);
+    background: #ffffff;
+    padding: 0 !important;
+}
+
+.GlobalBookingModal .ant-modal-container {
+    padding: 0 !important;
+}
+
+.GlobalBookingModal .ant-modal-close {
+    display: none;
+}
+
+.GBM-Header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 14px 20px 10px;
+    background: linear-gradient(135deg, var(--primary-mid) 0%, var(--primary-light) 100%);
+    border-bottom: 2px solid var(--primary-light);
+}
+
+.GBM-HeaderTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.GBM-HeaderLeft {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.GBM-DroneIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--text-on-dark);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.GBM-HeaderText {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.GBM-HeaderEyebrow {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1;
+}
+
+.GBM-HeaderTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 600px;
+}
+
+.GBM-CloseBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.GBM-CloseBtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.45);
+    color: #ffffff;
+}
+
+.GBM-TrustBar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 20px;
+    background: var(--surface-soft);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.GBM-TrustBar--inHeader {
+    padding: 0;
+    background: transparent;
+    border-bottom: 0;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.GBM-TrustItem {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.GBM-TrustItem svg {
+    color: rgba(255, 255, 255, 0.85);
+    flex-shrink: 0;
+}
+
+.GBM-TrustDivider {
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.35);
+    margin: 0 4px;
+    flex-shrink: 0;
+}
+
+.GBM-IframeWrap {
+    position: relative;
+    width: 100%;
+    height: 68vh;
+    min-height: 480px;
+    background: #f5f7fa;
+}
+
+.GBM-Loader {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background: #f5f7fa;
+    z-index: 2;
+}
+
+.GBM-LoaderSpinner {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid rgba(1, 26, 50, 0.12);
+    border-top-color: var(--primary-light);
+    animation: GBM-spin 0.75s linear infinite;
+}
+
+@keyframes GBM-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.GBM-LoaderText {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #4a6278;
+}
+
+.GBM-Iframe {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: #ffffff;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.GBM-Iframe--visible {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .GlobalBookingModal {
+        margin: 8px;
+    }
+
+    .GlobalBookingModal .ant-modal-content {
+        border-radius: 16px;
+    }
+
+    .GBM-Header {
+        padding: 12px 14px 9px;
+        gap: 10px;
+    }
+
+    .GBM-DroneIcon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .GBM-HeaderTitle {
+        font-size: 16px;
+        max-width: 240px;
+    }
+
+    .GBM-TrustBar--inHeader {
+        gap: 6px;
+    }
+
+    .GBM-TrustItem {
+        font-size: 14px;
+    }
+
+    .GBM-IframeWrap {
+        height: 65vh;
+        min-height: 360px;
+    }
+}
+
+@media (max-width: 480px) {
+    .GBM-TrustDivider {
+        display: none;
+    }
+
+    .GBM-HeaderTitle {
+        max-width: 180px;
+    }
+}
+
+/* ═══════════════════════════════════════
+   SEASON CLOSED — rain notice modal
+═══════════════════════════════════════ */
+
+.GlobalBookingModal--season.GlobalBookingModal .ant-modal-content,
+.GlobalBookingModal--season .ant-modal-content {
+    background: #0b2a45 !important;
+    border-color: rgba(255, 255, 255, 0.14);
+}
+
+.GBM-SeasonWrap {
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
+    background: linear-gradient(165deg, #071e33 0%, #0d3354 42%, #13466d 100%);
+    color: #ffffff;
+}
+
+.GBM-Rain {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.GBM-RainDrop {
+    position: absolute;
+    top: -12%;
+    width: 2px;
+    border-radius: 999px;
+    background: linear-gradient(
+        to bottom,
+        rgba(210, 235, 255, 0),
+        rgba(190, 225, 255, 0.95)
+    );
+    box-shadow: 0 0 4px rgba(160, 210, 255, 0.35);
+    animation-name: GBM-rainFall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.GBM-RainMist {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(100, 170, 220, 0.28), transparent 55%),
+        linear-gradient(to bottom, transparent 50%, rgba(4, 16, 32, 0.55));
+}
+
+@keyframes GBM-rainFall {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    100% {
+        transform: translateY(120vh) translateX(12px);
+    }
+}
+
+.GBM-SeasonWrap .GBM-Header {
+    position: relative;
+    z-index: 1;
+    background: rgba(4, 18, 34, 0.65);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.GBM-SeasonBody {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    padding: 28px 28px 32px;
+}
+
+.GBM-SeasonIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    color: #e8f4ff;
+    margin-bottom: 4px;
+    box-shadow: 0 0 36px rgba(120, 190, 255, 0.35);
+}
+
+.GBM-SeasonHeadline {
+    margin: 0;
+    font-family: "Montserrat", "Poppins", sans-serif;
+    font-size: clamp(1.25rem, 3.5vw, 1.55rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    line-height: 1.25;
+    max-width: 22ch;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+}
+
+.GBM-SeasonLead {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.55;
+    color: #e6f2fc;
+    max-width: 38ch;
+}
+
+.GBM-KeywordLink {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+}
+
+.GBM-KeywordLink:hover,
+.GBM-KeywordLink:focus-visible {
+    color: inherit;
+    text-decoration: none;
+}
+
+.GBM-SeasonCopy {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #c5dceb;
+    max-width: 40ch;
+}
+
+.GBM-SeasonBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #f0f7ff;
+}
+
+.GBM-SeasonBadge svg {
+    flex-shrink: 0;
+    color: #9ed0f5;
+}
+
+.GBM-SeasonCta {
+    margin-top: 8px;
+    padding: 12px 36px;
+    border: 0;
+    border-radius: 10px;
+    background: #ff6b1a;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+.GBM-SeasonCta:hover {
+    background: #ff7d33;
+}
+
+@media (max-width: 480px) {
+    .GBM-SeasonBody {
+        padding: 22px 18px 26px;
+        gap: 12px;
+    }
+
+    .GBM-SeasonIcon {
+        width: 72px;
+        height: 72px;
+    }
+
+    .GBM-SeasonIcon svg {
+        width: 40px;
+        height: 40px;
+    }
+}

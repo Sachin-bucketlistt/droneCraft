@@ -1,0 +1,811 @@
+/* ════════════════════════════════════════
+   CHOOSE ADVENTURE — reference layout
+═════════════════════════════════════════ */
+.ChooseAdventure {
+    position: relative;
+    z-index: 1;
+    background: #ffffff;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.ChooseAdventureBg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.ChooseAdventureBgImg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    opacity: 0.14;
+}
+
+.ChooseAdventureBgFade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.92) 0%,
+        rgba(255, 255, 255, 0.97) 40%,
+        #ffffff 100%
+    );
+}
+
+.ChooseAdventureContent {
+    position: relative;
+    z-index: 2;
+}
+
+/* ════════════════════════════════
+   HEADER
+════════════════════════════════ */
+.ChooseHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.ChooseEyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.ChooseEyebrowIcon {
+    color: var(--primary-light);
+    font-size: 17px;
+    flex-shrink: 0;
+}
+
+.ChooseEyebrowText {
+    color: var(--primary-light);
+    font-family: var(--font-label, "Poppins", sans-serif);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.ChooseEyebrowLine {
+    display: inline-block;
+    width: 36px;
+    height: 1.5px;
+    background: var(--primary-light);
+    border-radius: 2px;
+}
+
+.ChooseHeading {
+    margin: 0 0 8px;
+    font-family: var(--font-section-poppins, "Poppins", sans-serif);
+    font-size: clamp(24px, 3.2vw, 34px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+}
+
+.ChooseHeadingNavy {
+    color: var(--primary-mid);
+}
+
+.ChooseHeadingOrange {
+    color: var(--secondary-color);
+}
+
+.ChooseSubtitle {
+    max-width: 520px;
+    margin: 0 auto 18px;
+    color: #5c6f82;
+    font-family: var(--font-body, "Inter", sans-serif);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Header feature row */
+.ChooseFeatures {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 28px;
+    max-width: 860px;
+}
+
+.ChooseFeature {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-align: left;
+}
+
+.ChooseFeatureIcon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-light);
+    background: linear-gradient(145deg, #f0f5fb 0%, #e4edf7 100%);
+    border: 1px solid rgba(26, 77, 140, 0.12);
+    border-radius: 12px;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    flex-shrink: 0;
+}
+
+.ChooseFeatureText {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.ChooseFeatureText strong {
+    font-family: var(--font-section-poppins, "Poppins", sans-serif);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary-mid);
+    line-height: 1.15;
+}
+
+.ChooseFeatureText span {
+    font-family: var(--font-body, "Inter", sans-serif);
+    font-size: 14px;
+    color: #6a7a8c;
+    line-height: 1.25;
+}
+
+/* ════════════════════════════════
+   CARDS GRID
+════════════════════════════════ */
+.ChooseGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    align-items: stretch;
+}
+
+.ChooseCard {
+    background: #ffffff;
+    border: 1px solid #e4ebf3;
+    border-top-width: 3px;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 6px 20px rgba(12, 45, 74, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ChooseCard--calm {
+    border-top-color: #1aa88a;
+}
+
+.ChooseCard--popular {
+    border-top-color: var(--secondary-color);
+}
+
+.ChooseCard--wild {
+    border-top-color: var(--primary-color);
+}
+
+.ChooseCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(12, 45, 74, 0.1);
+}
+
+.ChooseCard--highlight {
+    box-shadow: 0 10px 26px rgba(255, 107, 0, 0.14);
+}
+
+/* ─── Compact photo ─── */
+.ChooseCardImageWrap {
+    position: relative;
+    height: 118px;
+    overflow: hidden;
+    background: var(--primary-color);
+    isolation: isolate;
+}
+
+.ChooseCardImageWrap::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+        180deg,
+        rgba(1, 26, 50, 0.28) 0%,
+        transparent 42%,
+        transparent 70%,
+        rgba(1, 26, 50, 0.12) 100%
+    );
+}
+
+.ChooseCardImageWrap::after {
+    content: "";
+    position: absolute;
+    inset: -25% -55%;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(
+        105deg,
+        transparent 38%,
+        rgba(255, 255, 255, 0.04) 44%,
+        rgba(255, 255, 255, 0.28) 50%,
+        rgba(255, 255, 255, 0.04) 56%,
+        transparent 62%
+    );
+    transform: translateX(-120%) skewX(-12deg);
+    animation: chooseCinematicShine 6s ease-in-out infinite;
+}
+
+@keyframes chooseCinematicShine {
+    0%,
+    70% {
+        transform: translateX(-120%) skewX(-12deg);
+        opacity: 0;
+    }
+    76% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(120%) skewX(-12deg);
+        opacity: 0;
+    }
+}
+
+.ChooseCard:hover .ChooseCardImageWrap::after {
+    animation-duration: 2.2s;
+}
+
+.ChooseCardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 42%;
+    display: block;
+    filter: saturate(1.08) contrast(1.05);
+    transition: transform 0.55s ease;
+}
+
+.ChooseCard:hover .ChooseCardImage {
+    transform: scale(1.05);
+}
+
+.ChooseCardWave {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    z-index: 3;
+    width: 100%;
+    height: 16px;
+    display: block;
+    pointer-events: none;
+}
+
+.ChooseCardFlag {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 4;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 9px;
+    color: #ffffff;
+    font-family: var(--font-label, "Poppins", sans-serif);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    border-radius: 999px;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.ChooseCardFlag--calm {
+    background: #148f78;
+}
+
+.ChooseCardFlag--popular {
+    background: var(--secondary-color);
+    box-shadow: 0 2px 8px rgba(255, 107, 0, 0.35);
+}
+
+.ChooseCardFlag--wild {
+    background: rgba(1, 26, 50, 0.92);
+}
+
+.ChooseCardFlag svg {
+    color: #ffffff;
+}
+
+.ChooseCardRating {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 4;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 3px 8px;
+    background: rgba(255, 255, 255, 0.96);
+    color: var(--primary-mid);
+    font-family: var(--font-label, "Poppins", sans-serif);
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 999px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+}
+
+.ChooseCardRating svg {
+    color: var(--secondary-color);
+}
+
+/* ─── Card body ─── */
+.ChooseCardBody {
+    padding: 0 12px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-height: 0;
+}
+
+.ChooseCardTitle {
+    margin: 0;
+    font-family: var(--font-section-poppins, "Poppins", sans-serif);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--primary-mid);
+    line-height: 1.2;
+}
+
+.ChooseCardTitleKm {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.ChooseCard--calm .ChooseCardTitleKm {
+    color: #0e7f6b;
+}
+
+.ChooseCard--popular .ChooseCardTitleKm {
+    color: var(--secondary-color);
+}
+
+.ChooseCard--wild .ChooseCardTitleKm {
+    color: var(--primary-color);
+}
+
+.ChooseCardTitlePlace {
+    display: block;
+    margin-top: 1px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #6a7a8c;
+    letter-spacing: 0;
+}
+
+.ChooseCardDesc {
+    margin: 0;
+    color: #5c6f82;
+    font-family: var(--font-body, "Inter", sans-serif);
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+/* Distance, duration, rapids — river-route strip */
+.ChooseCardFacts {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2px;
+    margin: 0;
+    padding: 8px 2px 7px;
+    list-style: none;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #f7fafc 0%, #eef3f8 100%);
+    border: 1px solid #e3ebf3;
+}
+
+.ChooseCardFacts::before {
+    content: "";
+    position: absolute;
+    left: 14%;
+    right: 14%;
+    top: 18px;
+    border-top: 1.5px dashed #c9d7e4;
+    z-index: 0;
+}
+
+.ChooseCardFact {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    text-align: center;
+    min-width: 0;
+    padding: 0 2px;
+}
+
+.ChooseCardFactIcon {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #ffffff;
+    color: var(--primary-light);
+    border: 1px solid #d5e2ee;
+}
+
+.ChooseCard--calm .ChooseCardFactIcon {
+    color: #148f78;
+    border-color: #c7ebe3;
+}
+
+.ChooseCard--popular .ChooseCardFactIcon {
+    color: #e85d00;
+    border-color: #ffd7b8;
+}
+
+.ChooseCard--wild .ChooseCardFactIcon {
+    color: var(--primary-mid);
+}
+
+.ChooseCardFact strong {
+    font-family: var(--font-section-poppins, "Poppins", sans-serif);
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--primary-mid);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+}
+
+.ChooseCardFact small {
+    font-family: var(--font-body, "Inter", sans-serif);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #7b8b9c;
+    line-height: 1.1;
+}
+
+/* Named rapids */
+.ChooseRapids {
+    min-width: 0;
+}
+
+.ChooseRapidsLabel {
+    margin: 0;
+    font-family: var(--font-label, "Poppins", sans-serif);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7b8b9c;
+}
+
+.ChooseRapidsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    list-style: none;
+    margin: 5px 0 0;
+    padding: 0;
+}
+
+.ChooseRapid {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    max-width: 100%;
+    padding: 3px 7px;
+    border-radius: 999px;
+    background: #ffffff;
+    border: 1px solid #e1e8f0;
+    font-family: var(--font-label, "Poppins", sans-serif);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-mid);
+    line-height: 1.25;
+}
+
+.ChooseRapidGrade,
+.ChooseRapidTag {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.35;
+    border-radius: 999px;
+    padding: 0 4px;
+    flex-shrink: 0;
+}
+
+.ChooseRapidGrade {
+    color: #e85d00;
+    background: rgba(255, 107, 0, 0.12);
+}
+
+.ChooseRapidTag {
+    color: #0e7f6b;
+    background: rgba(20, 143, 120, 0.12);
+}
+
+.ChooseRapidsNote {
+    margin: 5px 0 0;
+    color: #5c6f82;
+    font-family: var(--font-body, "Inter", sans-serif);
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+.ChooseCardBest {
+    margin: 0;
+    padding: 7px 8px;
+    border-radius: 8px;
+    background: #f6f8fb;
+    border-left: 2px solid var(--primary-light);
+}
+
+.ChooseCard--calm .ChooseCardBest {
+    background: #f3fbf8;
+    border-left-color: #1aa88a;
+}
+
+.ChooseCard--popular .ChooseCardBest {
+    background: #fff8f3;
+    border-left-color: var(--secondary-color);
+}
+
+.ChooseCard--wild .ChooseCardBest {
+    background: #f4f7fb;
+    border-left-color: var(--primary-color);
+}
+
+.ChooseCardBestLabel {
+    display: block;
+    margin-bottom: 1px;
+    font-family: var(--font-label, "Poppins", sans-serif);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+}
+
+.ChooseCardBestText {
+    display: block;
+    font-family: var(--font-body, "Inter", sans-serif);
+    font-size: 15px;
+    line-height: 1.35;
+    color: #3e5266;
+}
+
+/* Footer: price + button */
+.ChooseCardFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 2px;
+}
+
+.ChooseCardPriceWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 0;
+    flex: 1;
+}
+
+.ChooseCardPrice {
+    font-family: var(--font-section-poppins, "Poppins", sans-serif);
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--primary-mid);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.ChooseCardVoucher {
+    font-family: var(--font-body, "Inter", sans-serif);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-light);
+    line-height: 1.15;
+    white-space: nowrap;
+}
+
+.ChooseCardViewBtn.Btn--outlineOrange {
+    flex-shrink: 0;
+    min-width: 0;
+    width: auto;
+    max-width: 46%;
+    min-height: 32px;
+    padding: 4px 4px 4px 10px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    gap: 6px;
+    letter-spacing: 0;
+}
+
+.ChooseCardViewBtn.Btn--outlineOrange .BtnText {
+    flex: 0 1 auto;
+    white-space: nowrap;
+}
+
+.ChooseCardViewBtn.Btn--outlineOrange .BtnIconCircle {
+    width: 22px;
+    height: 22px;
+}
+
+/* ════════════════════════════════
+   INCLUSIONS BAR
+════════════════════════════════ */
+.ChooseInclusions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+    gap: 10px 14px;
+    margin-top: 22px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    border: 1px solid #e8edf2;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(12, 45, 74, 0.05);
+}
+
+.ChooseInclusion {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}
+
+.ChooseInclusionIcon {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-light);
+    background: #ffffff;
+    border: 1px solid #e8edf2;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.ChooseInclusionText {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.ChooseInclusionText strong {
+    font-family: var(--font-section-poppins, "Poppins", sans-serif);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary-mid);
+    line-height: 1.15;
+}
+
+.ChooseInclusionText span {
+    font-family: var(--font-body, "Inter", sans-serif);
+    font-size: 13px;
+    color: #6a7a8c;
+    line-height: 1.2;
+}
+
+/* ════════════════════════════════
+   RESPONSIVE
+════════════════════════════════ */
+@media (min-width: 1025px) {
+    .ChooseCardDesc {
+        min-height: calc(1.45em * 4);
+    }
+}
+
+@media (max-width: 1100px) {
+    .ChooseGrid {
+        gap: 14px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .ChooseGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ChooseCard--highlight {
+        grid-column: span 1;
+    }
+
+    .ChooseInclusions {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+    }
+}
+
+@media (max-width: 720px) {
+    .ChooseFeatures {
+        gap: 20px 24px;
+    }
+
+    .ChooseGrid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .ChooseCardImageWrap {
+        height: 148px;
+    }
+
+    .ChooseCardFooter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ChooseCardViewBtn.Btn--outlineOrange {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 560px) {
+    .ChooseFeatures {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 8px;
+    }
+
+    .ChooseCardFact strong {
+        white-space: normal;
+        font-size: 15px;
+    }
+
+    .ChooseCardFacts::before {
+        display: none;
+    }
+
+    .ChooseInclusions {
+        grid-template-columns: 1fr 1fr;
+        padding: 18px 16px;
+    }
+
+    .ChooseInclusion {
+        justify-content: flex-start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ChooseCard,
+    .ChooseCardImage {
+        transition: none;
+    }
+
+    .ChooseCard:hover {
+        transform: none;
+    }
+
+    .ChooseCardImageWrap::after {
+        animation: none;
+        opacity: 0;
+    }
+}

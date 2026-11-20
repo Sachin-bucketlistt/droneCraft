@@ -1,0 +1,19 @@
+{
+  "name": "Drone Craft",
+  "short_name": "Drone Craft",
+  "description": "Book river rafting in Rishikesh with Drone Craft. Premium safety, expert guides, and routes from Shivpuri, Brahmpuri, and Marine Drive.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#011A32",
+  "theme_color": "#011A32",
+  "lang": "en-IN",
+  "icons": [
+    {
+      "src": "/Images/Favicon.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
